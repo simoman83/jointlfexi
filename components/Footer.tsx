@@ -1,0 +1,20 @@
+import React from 'react';
+
+interface FooterProps {
+    onShowPrivacy: () => void;
+    onShowRefund: () => void;
+}
+
+export const Footer: React.FC<FooterProps> = ({ onShowPrivacy, onShowRefund }) => {
+    return (
+        <footer className="text-center py-6 bg-slate-800 text-gray-400 text-sm">
+            <p>&copy; 2025. جميع الحقوق محفوظة لـ Joint Flexi.</p>
+            <div className="mt-2">
+                <a href="#" onClick={(e) => { e.preventDefault(); onShowPrivacy(); }} className="hover:underline mx-2">سياسة الخصوصية</a>
+                <span className="mx-1">|</span>
+                <a href="#" onClick={(e) => { e.preventDefault(); onShowRefund(); }} className="hover:underline mx-2">سياسة الاسترداد</a>
+            </div>
+            <p className="mt-2 max-w-2xl mx-auto px-4">هذا المنتج ليس دواءً ولا يغني عن استشارة الطبيب. النتائج قد تختلف من شخص لآخر. المعلومات الواردة في هذه الصفحة هي لأغراض إعلامية فقط.</p>
+        </footer>
+    );
+};
